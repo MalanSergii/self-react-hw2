@@ -6,7 +6,7 @@ export default function Statistics({ dataArray, normalize, total, positive }) {
       <ul>
         {dataArray.map(item => (
           <li key={item[0]}>
-            {normalize(item[0])}: {dataArray[item[0]]}
+            {normalize(item[0])}: {item[1]}
           </li>
         ))}
       </ul>

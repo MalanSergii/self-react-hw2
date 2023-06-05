@@ -4,6 +4,7 @@ import Feedback from './Feedback';
 import Statistics from './Statistics';
 import Section from './Section';
 import Notification from './Notification';
+import { AppBody } from './App.styled';
 
 export default class App extends Component {
   state = {
@@ -36,7 +37,7 @@ export default class App extends Component {
     const totalFeedbackPoints = this.countTotalFeedback(this.state);
     const positive = this.countPositiveFeedbackPercentage();
     return (
-      <>
+      <AppBody>
         <Section title="Please leave feedback">
           <Feedback
             dataArray={dataArray}
@@ -57,7 +58,7 @@ export default class App extends Component {
             <Notification message="There is no feedback" />
           )}
         </Section>
-      </>
+      </AppBody>
     );
   }
 }

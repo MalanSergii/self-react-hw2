@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
+import { ButtonsList, Item, Button } from './ButtonsArea.styled';
 export default function ButtonsArea({ dataArray, normalize, onButtonClick }) {
   return (
-    <ul>
+    <ButtonsList>
       {dataArray.map(item => (
-        <li key={item[0]}>
-          <button value={item[0]} onClick={onButtonClick}>
+        <Item key={item[0]}>
+          <Button value={item[0]} onClick={onButtonClick}>
             {normalize(item[0])}
-          </button>
-        </li>
+          </Button>
+        </Item>
       ))}
-    </ul>
+    </ButtonsList>
   );
 }
 
