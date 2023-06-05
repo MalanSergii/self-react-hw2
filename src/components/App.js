@@ -32,13 +32,14 @@ export default class App extends Component {
   };
 
   render() {
+    const dataArray = Object.entries(this.state);
     const totalFeedbackPoints = this.countTotalFeedback(this.state);
     const positive = this.countPositiveFeedbackPercentage();
     return (
       <>
         <Section title="Please leave feedback">
           <Feedback
-            state={this.state}
+            dataArray={dataArray}
             normalize={this.normalize}
             onButtonClick={this.onButtonClick}
           ></Feedback>
@@ -47,11 +48,10 @@ export default class App extends Component {
         <Section title="Statistics">
           {totalFeedbackPoints > 0 ? (
             <Statistics
-              state={this.state}
+              dataArray={dataArray}
               normalize={this.normalize}
               total={totalFeedbackPoints}
               positive={positive}
-              onButtonClick={this.onButtonClick}
             ></Statistics>
           ) : (
             <Notification message="There is no feedback" />

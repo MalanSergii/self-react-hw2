@@ -1,9 +1,8 @@
-export default function ButtonsArea({ state, normalize, onButtonClick }) {
-  const buttonsArray = Object.entries(state);
-
+import PropTypes from 'prop-types';
+export default function ButtonsArea({ dataArray, normalize, onButtonClick }) {
   return (
     <ul>
-      {buttonsArray.map(item => (
+      {dataArray.map(item => (
         <li key={item[0]}>
           <button value={item[0]} onClick={onButtonClick}>
             {normalize(item[0])}
@@ -13,3 +12,7 @@ export default function ButtonsArea({ state, normalize, onButtonClick }) {
     </ul>
   );
 }
+
+ButtonsArea.propTypes = {
+  dataArray: PropTypes.arrayOf(PropTypes.array),
+};

@@ -1,12 +1,12 @@
-export default function Statistics({ state, normalize, total, positive }) {
-  const statsArray = Object.entries(state);
+import PropTypes from 'prop-types';
 
+export default function Statistics({ dataArray, normalize, total, positive }) {
   return (
     <div className="stats">
       <ul>
-        {statsArray.map(item => (
+        {dataArray.map(item => (
           <li key={item[0]}>
-            {normalize(item[0])}: {state[item[0]]}
+            {normalize(item[0])}: {dataArray[item[0]]}
           </li>
         ))}
       </ul>
@@ -15,3 +15,10 @@ export default function Statistics({ state, normalize, total, positive }) {
     </div>
   );
 }
+
+Statistics.propTypes = {
+  dataArray: PropTypes.arrayOf(PropTypes.any),
+  normalize: PropTypes.func.isRequired,
+  total: PropTypes.number.isRequired,
+  positive: PropTypes.number.isRequired,
+};
