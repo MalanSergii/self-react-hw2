@@ -2,7 +2,7 @@
   "name": "react-homework-template",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://malansergii.io/self_react_hw_2-feedback-feedback",
+  "homepage": "https://malansergii.io/self_react_hw_2/",
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
